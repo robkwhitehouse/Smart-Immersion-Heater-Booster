@@ -21,14 +21,14 @@
 #
 # GivEnergy API site specific constants - will need to be changed
 
-GE_INVERTER_SN = 'FD2311G675'
-GE_API_KEY = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTc3MDIxOS1jYWE2LTRmOTctOTE3Ni0zNDBlZGMzZDQxNTgiLCJqdGkiOiIwYTFlNzI1NTA4NmUxMGQ3MWRhZjE1OWQxZTY2MTU1MGMyYTlkMDBiMjBlMTZlYWJmMWNiZTA1NmVhYjBlMDQ1OTQ3NDNhM2RhNTFiNWRlYiIsImlhdCI6MTY4OTYwNDEwMi45MDY2NzYsIm5iZiI6MTY4OTYwNDEwMi45MDY2ODEsImV4cCI6MTcyMTIyNjUwMi44OTk5MDgsInN1YiI6IjQxNTcwIiwic2NvcGVzIjpbImFwaSJdfQ.MCceGVluN1wVj1wwx50LobAdwP5PkuIjT11-ppnpVYFV7gsbcuMa7V5ISk99SF_QoMtkeJsjQZganyWtNzckgQ'
+GE_INVERTER_SN = 'CHANGE THIS'
+GE_API_KEY = 'CHANGE THIS'
 
 # Myenergi site specific constants - will need to be changed
 
-EDDI_SERIAL = '21445826'
-ME_API_KEY = 'Dnht2ZfEJXdf5FPIuPJbifJ3'
-ME_SERVER = 's18'
+EDDI_SERIAL = 'CHANGE THIS - (DO NOT INCLUDE PREFIX E)'
+ME_API_KEY = 'CHANGE THIS'
+ME_SERVER = 's18' #possibly change this
 
 #
 #Some or all of the following paramaters will probably also need to be tweaked
@@ -47,7 +47,7 @@ import requests #http requests library
 from requests.auth import HTTPDigestAuth #required ny myenergi API
 import json
 import logging
-#import os
+import os
 
 
 #The log file will be overwritten each time this program starts (every day) - avoids housekeeping
@@ -100,11 +100,11 @@ def EDDIBoost(minutes):
 ###
 
 #First check that we have a WiFi or other LAN connection
-## TODO - not working
-#response = os.system("ping -c1 -w2 192.168.1.254")
-#if (response != 0):
-#    logging.error("No LAN connection. Aborting.")
-#    exit(1)
+## This bit DOESN'T WORK ON MS-Windows
+response = os.system("ping -c1 -w2 192.168.1.254")
+if (response != 0):
+    logging.error("No LAN connection. Aborting.")
+    exit(1)
 
 batteryCurrentCharge = MyEnergyBatteryCharge() # Call the ME cloud API to get battery charge (%)
 batterySurplusPercent = batteryCurrentCharge - BATTERY_RESERVE
