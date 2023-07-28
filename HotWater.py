@@ -119,7 +119,7 @@ if batterySurplusCharge > 0:
     logging.info('*** EDDI manual boost started ***')
     logging.info(f'Battery charge = {batteryCurrentCharge}%')
     logging.info(f'Battery surplus = {batterySurplusCharge} Watt hours')
-    logging.info(f'Boost period = {minutes} minutes')
+    logging.info(f'Boost period = {boostMinutes} minutes')
 else:
     logging.warning(f'Battery charge = {batteryCurrentCharge}%')
     logging.warning('No surplus charge, boost not started')
