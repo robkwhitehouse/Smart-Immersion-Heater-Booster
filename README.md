@@ -25,6 +25,6 @@ But it can be invoked manually or however you want
 It creates (or overwrites) a new log file every time in the working directory called HotWater.log
 The log file will tell you what the program did (or didn't do) and any errors and warnings
 
-**N.B. YOU MUST EDIT THE PYTHON FILE AND CHANGE THE API KEYS AND SERIAL NUMBERS 
+**N.B. YOU MUST EDIT THE PYTHON FILE AND CHANGE THE API KEYS AND SERIAL NUMBERS. 
 THESE ARE DEFINED AS CONSTANTS AT THE TOP OF THE FILE**
 
